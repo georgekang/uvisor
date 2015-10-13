@@ -87,6 +87,11 @@ CFLAG_SERIAL_DBG:=
 ifeq ("$(SERIAL_DEBUG)", "enable")
 SERIAL_SRC:=\
 	$(DEVICE_DIR)/src/serial.c
+
+ifeq ("$(CPU)", "STM32F429xx")
+SERIAL_SRC += $(DEVICE_DIR)/src/stm32f4xx_hal_gpio.c
+endif
+
 CFLAG_SERIAL_DBG:=-DSERIAL_DBG
 endif
 
