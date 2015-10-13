@@ -50,6 +50,8 @@
 /**
   * @brief This is the list of modules to be used in the HAL driver 
   */
+#define HAL_GPIO_MODULE_ENABLED
+#define HAL_RCC_MODULE_ENABLED
 
 /* ########################## HSE/HSI Values adaptation ##################### */
 /**
