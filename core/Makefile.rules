@@ -90,7 +90,8 @@ SERIAL_SRC:=\
 
 ifeq ("$(CPU)", "STM32F429xx")
 SERIAL_SRC += $(DEVICE_DIR)/src/stm32f4xx_hal_gpio.c \
-              $(DEVICE_DIR)/src/stm32f4xx_hal_rcc.c
+              $(DEVICE_DIR)/src/stm32f4xx_hal_rcc.c \
+              $(DEVICE_DIR)/src/stm32f4xx_hal_uart.c
 endif
 
 CFLAG_SERIAL_DBG:=-DSERIAL_DBG
