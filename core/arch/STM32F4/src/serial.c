@@ -16,20 +16,30 @@
  */
 
 #include "serial.h"
+#include "serial_api.h"
 
+
+static serial_t stdio_uart;
+static int is_serial_init = 0;
 
 void uvisor_serial_init(void)
 {
-    // TODO
+    serial_init(&stdio_uart, STDIO_UART_TX, STDIO_UART_RX);
+    is_serial_init = 1;
 }
 
 int uvisor_serial_getc(void)
 {
-    // TODO
-    return 0;
+    if (!is_serial_init)
+        return 0;
+
+    return serial_getc(&stdio_uart);
 }
 
 void uvisor_serial_putc(int c)
 {
-    // TODO
+    if (!is_serial_init)
+        return;
+
+    serial_putc(&stdio_uart, c);
 }
