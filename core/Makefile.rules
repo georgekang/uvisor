@@ -93,7 +93,8 @@ SERIAL_SRC += $(DEVICE_DIR)/src/stm32f4xx_hal_gpio.c \
               $(DEVICE_DIR)/src/stm32f4xx_hal_rcc.c \
               $(DEVICE_DIR)/src/stm32f4xx_hal_uart.c \
               $(DEVICE_DIR)/src/pinmap.c \
-              $(DEVICE_DIR)/src/pinmap_common.c
+              $(DEVICE_DIR)/src/pinmap_common.c \
+              $(DEVICE_DIR)/src/PeripheralPins.c
 endif
 
 CFLAG_SERIAL_DBG:=-DSERIAL_DBG
